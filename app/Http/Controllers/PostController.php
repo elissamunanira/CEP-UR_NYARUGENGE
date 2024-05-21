@@ -39,9 +39,19 @@ class PostController extends Controller
             'body' => 'required',
             'cover_image' => 'nullable|required|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'user_id' => 'required',
-            'category_id' => 'required',
+            'category_id' => 'required|exists:categories,id',
         ]);
-        $post = Post::create($request->all());
+
+        if ($request->hasFile('cover_image')) {
+            $path = $request->file('cover_image')->store('cover_images', 'public');
+        }
+        $post = Post::create([
+            'title' => $request->title,
+            'body' => $request->body,
+            'category_id' => $request->category_id,
+            'user_id' => $request->user_id,
+            'cover_image' => $path ?? null,
+        ]);
         return response()->json($post, 201);
     }
 
@@ -51,6 +61,8 @@ class PostController extends Controller
     public function show(string $id)
     {
         //
+        $post = Post::find($id);
+        return $post;
     }
 
     /**
@@ -59,6 +71,7 @@ class PostController extends Controller
     public function edit(string $id)
     {
         //
+        return view('post.edit');
     }
 
     /**
