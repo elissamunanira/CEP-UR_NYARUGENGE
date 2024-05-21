@@ -37,11 +37,12 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required',
             'body' => 'required',
-            'featured_image' => 'required',
+            'cover_image' => 'required',
             'user_id' => 'required',
             'category_id' => 'required',
         ]);
-        $post = Poste::create
+        $post = Post::create($request->all());
+        return response()->json($post, 201);
     }
 
     /**
