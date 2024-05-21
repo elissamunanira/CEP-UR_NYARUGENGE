@@ -22,6 +22,7 @@ class CategoryController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
+            'description' => 'required',
         ]);
 
         Category::create($request->all());
@@ -37,6 +38,7 @@ class CategoryController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
+            'description' => 'required',
         ]);
 
         $category->update($request->all());
