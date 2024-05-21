@@ -24,7 +24,8 @@ class PostController extends Controller
     public function create()
     {
         //
-        return redirect()->route('post.create');
+        // return redirect()->route('post.create');
+        return view('post.create');
     }
 
     /**
