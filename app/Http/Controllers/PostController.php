@@ -69,10 +69,10 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $post)
     {
         //
-        return view('post.edit');
+        return view('post.edit', compact('post'));
     }
 
     /**
