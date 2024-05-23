@@ -8,5 +8,11 @@
 </head>
 <body>
     <h1>CREATE POST PAGE</h1>
+    <form action="post.store" method="post">
+        <label for="title">Titl</label>
+        <input type="text"name="title">
+        <label for="body">Body</label>
+        <input type="textarea"name>
+    </form>
 </body>
 </html>
