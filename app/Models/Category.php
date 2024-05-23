@@ -14,7 +14,7 @@ class Category extends Model
         'description',
     ];
 
-    public function Post(){
-        return $this->hasMany('Post::class');
-    }
+    // public function Post(){
+    //     return $this->hasMany('Post::class');
+    // }
 }
