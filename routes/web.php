@@ -10,6 +10,10 @@ Route::get('/', function () {
     return view('home.index');
 });
 
+Route::get('/apps',function(){
+    return view('layouts.app');
+});
+
 Route::get('/dashboards', function () {
     return view('dashboard.index');
 });
