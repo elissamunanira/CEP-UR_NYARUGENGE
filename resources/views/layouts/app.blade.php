@@ -11,14 +11,14 @@
   
     <title>cepurnyarugenge</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="dashboard/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/dashboard/images/favicon.png">
     <!-- Pignose Calender -->
     <link href="./dashboard/plugins/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet">
     <!-- Chartist -->
     <link rel="stylesheet" href="./dashboard/plugins/chartist/css/chartist.min.css">
     <link rel="stylesheet" href="./dashboard/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
     <!-- Custom Stylesheet -->
-    <link href="dashboard/css/style.css" rel="stylesheet">
+    <link href="/dashboard/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -50,10 +50,10 @@
         <div class="nav-header">
             <div class="brand-logo">
                 <a href="index.html">
-                    <b class="logo-abbr"><img src="dashboard/images/logo.png" alt=""> </b>
+                    <b class="logo-abbr"><img src="/dashboard/images/logo.png" alt=""> </b>
                     <span class="logo-compact"><img src="./dashboard/images/logo-compact.png" alt=""></span>
                     <span class="brand-title">
-                        <img src="dashboard/images/logo-text.png" alt="">
+                        <img src="/dashboard/images/logo-text.png" alt="">
                     </span>
                 </a>
             </div>
@@ -103,7 +103,7 @@
                                     <ul>
                                         <li class="notification-unread">
                                             <a href="javascript:void()">
-                                                <img class="float-left mr-3 avatar-img" src="dashboard/images/avatar/1.jpg" alt="">
+                                                <img class="float-left mr-3 avatar-img" src="/dashboard/images/avatar/1.jpg" alt="">
                                                 <div class="notification-content">
                                                     <div class="notification-heading">Saiful Islam</div>
                                                     <div class="notification-timestamp">08 Hours ago</div>
@@ -113,7 +113,7 @@
                                         </li>
                                         <li class="notification-unread">
                                             <a href="javascript:void()">
-                                                <img class="float-left mr-3 avatar-img" src="dashboard/images/avatar/2.jpg" alt="">
+                                                <img class="float-left mr-3 avatar-img" src="/dashboard/images/avatar/2.jpg" alt="">
                                                 <div class="notification-content">
                                                     <div class="notification-heading">Adam Smith</div>
                                                     <div class="notification-timestamp">08 Hours ago</div>
@@ -123,7 +123,7 @@
                                         </li>
                                         <li>
                                             <a href="javascript:void()">
-                                                <img class="float-left mr-3 avatar-img" src="dashboard/images/avatar/3.jpg" alt="">
+                                                <img class="float-left mr-3 avatar-img" src="/dashboard/images/avatar/3.jpg" alt="">
                                                 <div class="notification-content">
                                                     <div class="notification-heading">Barak Obama</div>
                                                     <div class="notification-timestamp">08 Hours ago</div>
@@ -133,7 +133,7 @@
                                         </li>
                                         <li>
                                             <a href="javascript:void()">
-                                                <img class="float-left mr-3 avatar-img" src="dashboard/images/avatar/4.jpg" alt="">
+                                                <img class="float-left mr-3 avatar-img" src="/dashboard/images/avatar/4.jpg" alt="">
                                                 <div class="notification-content">
                                                     <div class="notification-heading">Hilari Clinton</div>
                                                     <div class="notification-timestamp">08 Hours ago</div>
@@ -404,11 +404,11 @@
     <!--**********************************
         Scripts
     ***********************************-->
-    <script src="dashboard/plugins/common/common.min.js"></script>
-    <script src="dashboard/js/custom.min.js"></script>
-    <script src="dashboard/js/settings.js"></script>
-    <script src="dashboard/js/gleek.js"></script>
-    <script src="dashboard/js/styleSwitcher.js"></script>
+    <script src="/dashboard/plugins/common/common.min.js"></script>
+    <script src="/dashboard/js/custom.min.js"></script>
+    <script src="/dashboard/js/settings.js"></script>
+    <script src="/dashboard/js/gleek.js"></script>
+    <script src="/dashboard/js/styleSwitcher.js"></script>
 
     <!-- Chartjs -->
     <script src="./dashboard/plugins/chart.js/Chart.bundle.min.js"></script>
