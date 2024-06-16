@@ -1,17 +1,10 @@
 <!DOCTYPE html>
 
-<!--
- // WEBSITE: https://themefisher.com
- // TWITTER: https://twitter.com/themefisher
- // FACEBOOK: https://www.facebook.com/themefisher
- // GITHUB: https://github.com/themefisher/
--->
-
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>NewsBit - News Magazine Newspaper HTML Template</title>
+    <title>cepurnyarugenge</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
@@ -131,7 +124,7 @@
                 <!-- Logo -->
                 <div class="logo">
                     <a href="index.html">
-                        <img src="images/logos/logo.png" alt=""> <!-- Replace Logo Here -->
+                        <img src="images/cep.png" alt="" style="height: 70px"> 
                     </a>
                 </div>
                 <!-- End Logo -->
@@ -139,7 +132,7 @@
             <div class="col-xs-12 col-sm-9 col-md-9">
                 <div class="top-ad-banner float-right">
                     <a href="#">
-                        <img src="images/news/ad-pro.png" class="img-fluid" alt="banner-ads">
+                        <img src="images/banner-ads/cep.png" class="img-fluid" alt="cepurnyarugenge">
                     </a>
                 </div>
             </div>

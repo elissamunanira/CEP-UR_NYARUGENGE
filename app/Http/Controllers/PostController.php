@@ -26,7 +26,7 @@ class PostController extends Controller
     {
         //
         // return redirect()->route('post.create');
-        return view('post.create');
+        return view('dashboard.post.create');
     }
 
     /**
