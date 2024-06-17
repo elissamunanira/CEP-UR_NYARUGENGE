@@ -22,7 +22,7 @@ Route::get('/dashboards', function () {
 
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 Route::get('/dashboard/posts/create', [PostController::class, 'create'])->name('post.create');
-Route::post('/posts/store', [PostController::class, 'store'])->name('post.store');
+Route::post('/posts', [PostController::class, 'store'])->name('post.store');
 Route::get('/dashboard/posts/{post}/edit', [PostController::class, 'edit'])->name('post.edit');
 Route::put('/dashboard/posts/{post}/update', [PostController::class, 'update'])->name('post.update');
 Route::delete('/dashboard/posts/{post}/delete', [PostController::class, 'delete'])->name('post.delete');

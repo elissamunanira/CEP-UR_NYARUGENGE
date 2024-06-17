@@ -14,8 +14,8 @@ class PostController extends Controller
     public function index()
     {
         //
-        $post = Post::all();
-        return view('dashboard.post.index', compact('post'));
+        $posts = Post::all();
+        return view('post.index', compact('posts'));
 
     }
 
@@ -26,7 +26,7 @@ class PostController extends Controller
     {
         //
         // return redirect()->route('post.create');
-        return view('dashboard.post.create');
+        return view('post.create');
     }
 
     /**

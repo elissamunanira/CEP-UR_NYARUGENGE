@@ -20,14 +20,14 @@
     </div>
 @endsession
 
-<div class="col-lg-6">
+<div class="col-lg-12">
     <div class="card">
         <div class="card-body">
             <div class="card-title">
                 <h4>CEP-UR Nyarugenge Roles Potal</h4>
             </div>
             <div class="table-responsive">
-                <table class="table">
+                <table class="table" id = "cep">
                     <thead>
                         <tr>
                             <th width="100px">No</th>
@@ -41,19 +41,19 @@
                             <td>{{ ++$i }}</td>
                             <td>{{ $role->name }}</td>
                             <td>
-                                <a class="btn btn-info btn-sm" href="{{ route('roles.show',$role->id) }}"><i class="fa-solid fa-list"></i> Show</a>
-                                @can('role-edit')
-                                    <a class="btn btn-primary btn-sm" href="{{ route('roles.edit',$role->id) }}"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
-                                @endcan
+                                <a class="btn btn-info btn-sm" href="{{ route('roles.show',$role->id) }}"><i class="fa-solid fa-list"></i>View</a>
+                                {{-- @can('role-edit') --}}
+                                    <a class="btn btn-primary btn-sm" href="{{ route('roles.edit',$role->id) }}"><i class="fa-solid fa-pen-to-square"></i>Edit</a>
+                                {{-- @endcan --}}
                     
-                                @can('role-delete')
+                                {{-- @can('role-delete') --}}
                                 <form method="POST" action="{{ route('roles.destroy', $role->id) }}" style="display:inline">
                                     @csrf
                                     @method('DELETE')
                     
-                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i> Delete</button>
+                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i>Delete</button>
                                 </form>
-                                @endcan
+                                {{-- @endcan --}}
                             </td>
                         </tr>
                         @endforeach
