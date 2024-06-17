@@ -301,20 +301,10 @@
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="./ui-accordion.html">All Members</a></li>
-                        <!-- </ul>
-                    </li>
-                    <li>
-                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-layers menu-icon"></i><span class="nav-text">Components</span>
-                        </a>
-                        <ul aria-expanded="false"> -->
-                            <li><a href="./uc-nestedable.html">Nestedable</a></li>
-                            <li><a href="./uc-noui-slider.html">Noui Slider</a></li>
-                            <li><a href="./uc-sweetalert.html">Sweet Alert</a></li>
-                            <li><a href="./uc-toastr.html">Toastr</a></li>
+                        
                         </ul>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="widgets.html" aria-expanded="false">
                             <i class="icon-badge menu-icon"></i><span class="nav-text">Widget</span>
                         </a>
@@ -331,15 +321,15 @@
                             <li><a href="./form-editor.html">Editor</a></li>
                             <li><a href="./form-picker.html">Picker</a></li>
                         </ul>
-                    </li>
-                    <li class="nav-label">Table</li>
+                    </li> --}}
+                    <li class="nav-label">Categories</li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-menu menu-icon"></i><span class="nav-text">Table</span>
+                            <i class="icon-menu menu-icon"></i><span class="nav-text">Categories</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./table-basic.html" aria-expanded="false">Basic Table</a></li>
-                            <li><a href="./table-datatable.html" aria-expanded="false">Data Table</a></li>
+                            <li><a href="{{route('categories.index')}}" aria-expanded="false">All Categories</a></li>
+                            <li><a href="{{route('categories.create')}}" aria-expanded="false">+New Category</a></li>
                         </ul>
                     </li>
                 </ul>
