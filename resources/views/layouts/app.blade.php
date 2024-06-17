@@ -56,7 +56,7 @@
                     <b class="logo-abbr"><img src="/images/cep.png" alt=""> </b>
                     <span class="logo-compact"><img src="./dashboard/images/logo-compact.png" alt=""></span>
                     <span class="brand-title">
-                        <img src="/images/cep.png" alt="">
+                        <img src="/images/cep.png" style="height: 50px" alt="">
                     </span>
                 </a>
             </div>
