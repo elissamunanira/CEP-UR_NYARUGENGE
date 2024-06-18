@@ -346,9 +346,7 @@
 
             <div class="container-fluid mt-3">
 
-                <div class="row">
-                    @yield('content')
-                </div>
+                @yield('content')
 
             </div>
             <!-- #/ container -->

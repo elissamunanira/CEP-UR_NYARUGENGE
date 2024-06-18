@@ -38,7 +38,7 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'body' => 'required',
-            'cover_image' => 'nullable|required|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'cover_image' => 'nullable|required|max:2048',
             'user_id' => 'required',
             'category_id' => 'required|exists:categories,id',
         ]);
@@ -46,14 +46,22 @@ class PostController extends Controller
         if ($request->hasFile('cover_image')) {
             $path = $request->file('cover_image')->store('cover_images', 'public');
         }
-        $post = Post::create([
-            'title' => $request->title,
-            'body' => $request->body,
-            'category_id' => $request->category_id,
-            'user_id' => $request->user_id,
-            'cover_image' => $path ?? null,
-        ]);
-        return response()->json($post, 201);
+
+        $post = new Post();
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+        $post->user_id = $request->input('user_id');
+        $post->category_id = $request->input('category_id');
+        $post->cover_image = $path;
+        $post->Save();
+        // Post::create([
+        //     'title' => $request->title,
+        //     'body' => $request->body,
+        //     'category_id' => $request->category_id,
+        //     'user_id' => $request->user_id,
+        //     'cover_image' => $path ?? null,
+        // ]);
+        return redirect()->route('posts.index')->with('success', 'post created successfully');
     }
 
     /**
