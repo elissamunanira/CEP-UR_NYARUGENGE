@@ -16,8 +16,11 @@ Route::get('/apps',function(){
 
 
 // Authentication
-Route::get('/register',[UserController::class, 'register'])->name('register');
-Route::get('/login',[UserController::class, 'login'])->name('login');
+Route::get('/register',[UserController::class, 'registerForm'])->name('register.form');
+Route::post('/register',[UserController::class, 'register'])->name('register');
+
+Route::get('/login',[UserController::class, 'loginForm'])->name('login.form');
+Route::post('/login',[UserController::class, 'login'])->name('login');
 
 Route::get('/dashboards', function () {
     return view('dashboard.index');
