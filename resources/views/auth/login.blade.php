@@ -1,17 +1,10 @@
 <!DOCTYPE html>
 
-<!--
- // WEBSITE: https://themefisher.com
- // TWITTER: https://twitter.com/themefisher
- // FACEBOOK: https://www.facebook.com/themefisher
- // GITHUB: https://github.com/themefisher/
--->
-
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>NewsBit - News Magazine Newspaper HTML Template</title>
+    <title>cepurnyarugenge</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -34,42 +27,34 @@
 </head>
 <body>
 
+
 <section class="login-signup section-padding">
     <div class="container">
         <div class="row align-items-center justify-content-center">
             <div class="col-lg-7">
-                <div class="signup">
+                <div class="login">
                     <div class="text-center"><a href="index.html"><img src="images/logos/logo.png" alt="" class="img-fluid"></a></div>
-                    <h3 class="mt-4">Sign Up Here</h3>
-                    <p class="mb-5">Join with us and feel better</p>
-                    <form action="#" class="signup-form row">
-                        <div class="col-md-6">
+
+                    <h3 class="mt-4">Login Here</h3>
+                    <p class="mb-5">Enter your valid mail & password</p>
+                    <form action="{{route('login')}}" method="post" class="login-form row">
+                        @csrf
+                        <div class="col-md-12">
                             <div class="form-group">
-                                <label for="f-name">First Name</label>
-                                <input type="text" class="form-control" id="f-name" name="f-name" placeholder="First name">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="l-name">Last Name</label>
-                                <input type="text" id="l-name" name="l-name" class="form-control" placeholder="Last Name">
+                                <label for="loginemail">Email</label>
+                                <input type="text" id="email" class="form-control" name="email" placeholder="Enter mail" required>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="email-address">Email</label>
-                                <input type="email" class="form-control" name="email-address" id="email-address" placeholder="Enter a valid mail">
+                                <label for="loginPassword">Password</label>
+                                <input type="password" id="password" class="form-control" name="password" placeholder="Password" required>
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="password-s">Password</label>
-                                <input type="password" class="form-control" id="password-s" name="password-s" placeholder="A strong password">
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <button class="btn btn-primary" type="submit">Sign Up</button>
-                            <p class="mt-5 mb-0">Already a member? <a href="account.html">Log in</a></p>
+                            <button class="btn btn-primary" type="submit" name = "submit">Login</button>
+
+                            <p class="mt-5 mb-0">Not a member yet? <a href="{{route('register.form')}}">Register Here</a></p>
                         </div>
                     </form>
                 </div>
@@ -77,6 +62,7 @@
         </div>
     </div>
 </section>
+
 
 <!-- THEME JAVASCRIPT FILES
 ================================================== -->

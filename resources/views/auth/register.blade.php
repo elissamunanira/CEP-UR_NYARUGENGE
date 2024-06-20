@@ -69,7 +69,7 @@
                         </div>
                         <div class="col-md-12">
                             <button class="btn btn-primary" type="submit">Sign Up</button>
-                            <p class="mt-5 mb-0">Already a member? <a href="account.html">Log in</a></p>
+                            <p class="mt-5 mb-0">Already a member? <a href="{{route('login.form')}}">Log in</a></p>
                         </div>
                     </form>
                 </div>
