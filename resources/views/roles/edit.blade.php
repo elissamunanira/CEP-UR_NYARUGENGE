@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-lg-12 margin-tb">
                     <div class="pull-left">
-                        <h2>Edit Role</h2>
+                        <h4>CEP-UR Nyarugenge roles potal/ Edit Role</h4>
                     </div>
                     <div class="pull-right">
                         <a class="btn btn-primary btn-sm mb-2" href="{{ route('roles.index') }}"><i class="fa fa-arrow-left"></i> Back</a>

@@ -4,13 +4,13 @@
 <div class="col-lg-12">
     <div class="card">
         <div class="card-body">
-            <div class="card-title">
+            {{-- <div class="card-title">
                 <h4>CEP-UR Nyarugenge Roles Potal</h4>
-            </div>
+            </div> --}}
             <div class="row">
                 <div class="col-lg-12 margin-tb">
                     <div class="pull-left">
-                        <h5>Create New Role</h5>
+                        <h4>CEP-UR Nyarugenge Roles Potal/Create New Role</h4>
                     </div>
                     <div class="pull-right">
                         <a class="btn btn-primary btn-sm mb-2" href="{{ route('roles.index') }}"><i class="fa fa-arrow-left"></i> Back</a>

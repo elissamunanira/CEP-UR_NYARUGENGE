@@ -4,11 +4,11 @@
 <div class="col-lg-12">
     <div class="card">
         <div class="card-body">
-            <div class="card-title">
-                <h4>CEP-UR Nyarugenge Users Potal/ Create New User</h4>
-            </div>
             <div class="row">
                 <div class="col-lg-12 margin-tb">
+                    <div class="pull-left">
+                        <h4>CEP-UR Nyarugenge Users Potal/ Create New User</h4>
+                    </div>
                     <div class="pull-right">
                         <a class="btn btn-primary btn-sm mb-2" href="{{ route('users.index') }}"><i class="fa fa-arrow-left"></i> Back</a>
                     </div>

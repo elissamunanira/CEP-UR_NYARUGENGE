@@ -273,7 +273,7 @@
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{route('users.index')}}">Users</a></li>
-                            <li><a href="{{route('users.create')}}">+New User</a></li>
+                            <li><a href="{{route('users.create')}}"><i class="fa fa-plus"></i>New User</a></li>
                         </ul>
                     </li>
                     <li>
@@ -282,7 +282,7 @@
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{route('posts.index')}}">All Posts</a></li>
-                            <li><a href="{{route('post.create')}}">+New Post</a></li>
+                            <li><a href="{{route('post.create')}}"><i class="fa fa-plus"></i>New Post</a></li>
                         </ul>
                     </li>
                     <li>
@@ -291,7 +291,7 @@
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{route('roles.index')}}">All Roles</a></li>
-                            <li><a href="{{route('roles.create')}}">+New Roles</a></li>
+                            <li><a href="{{route('roles.create')}}"><i class="fa fa-plus"></i>New Roles</a></li>
                         </ul>
                     </li>
                     <li class="nav-label">Members</li>
@@ -329,7 +329,7 @@
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{route('categories.index')}}" aria-expanded="false">All Categories</a></li>
-                            <li><a href="{{route('categories.create')}}" aria-expanded="false">+New Category</a></li>
+                            <li><a href="{{route('categories.create')}}" aria-expanded="false"><i class="fa fa-plus"></i>New Category</a></li>
                         </ul>
                     </li>
                 </ul>
