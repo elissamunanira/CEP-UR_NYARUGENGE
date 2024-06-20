@@ -4,126 +4,83 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
-use App\Http\Controllers\Storage;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
         $posts = Post::all();
-        return view('post.index', compact('posts'));
-
+        return view('posts.index', compact('posts'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
-        // return redirect()->route('post.create');
-        return view('post.create');
+        return view('posts.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
         $request->validate([
             'title' => 'required|string|max:255',
-            'body' => 'required',
-            'cover_image' => 'nullable|required|max:2048',
-            'user_id' => 'required',
-            'category_id' => 'required|exists:categories,id',
+            'body' => 'required|string',
+            'cover_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
+        ]);
+
+        $coverImage = null;
+        if ($request->hasFile('cover_image')) {
+            $coverImage = $request->file('cover_image')->store('cover_images', 'public');
+        }
+
+        Post::create([
+            'title' => $request->title,
+            'body' => $request->body,
+            'cover_image' => $coverImage,
+        ]);
+
+        return redirect()->route('posts.index')->with('success', 'Post created successfully.');
+    }
+
+    public function show(Post $post)
+    {
+        return view('posts.show', compact('post'));
+    }
+
+    public function edit(Post $post)
+    {
+        return view('posts.edit', compact('post'));
+    }
+
+    public function update(Request $request, Post $post)
+    {
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'body' => 'required|string',
+            'cover_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
 
         if ($request->hasFile('cover_image')) {
-            $path = $request->file('cover_image')->store('cover_images', 'public');
-        }
-
-        $post = new Post();
-        $post->title = $request->input('title');
-        $post->body = $request->input('body');
-        $post->user_id = $request->input('user_id');
-        $post->category_id = $request->input('category_id');
-        $post->cover_image = $path;
-        $post->Save();
-        // Post::create([
-        //     'title' => $request->title,
-        //     'body' => $request->body,
-        //     'category_id' => $request->category_id,
-        //     'user_id' => $request->user_id,
-        //     'cover_image' => $path ?? null,
-        // ]);
-        return redirect()->route('posts.index')->with('success', 'post created successfully');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-        $post = Post::find($id);
-        return $post;
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $post)
-    {
-        //
-        return view('post.edit', compact('post'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Post $post)
-    {
-        //
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'body' => 'required',
-            'cover_image' => 'nullable|required|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'user_id' => 'required',
-            'category_id' => 'required|exists:categories,id',
-        ]);
-
-        if($request->hasFile('cover_image')){
-            if($post->cover_image){
-                Storage::disk('cover_images','public')->delete($post->cover_image);
+            if ($post->cover_image) {
+                Storage::disk('public')->delete($post->cover_image);
             }
-
-            $path = $request->file('cover_image')->store('cover_images','public');
+            $coverImage = $request->file('cover_image')->store('cover_images', 'public');
+            $post->cover_image = $coverImage;
         }
 
-        $post->update([
-            'title' => $request->title,
-            'body' => $request->body,
-            'category_id' => $request->category_id,
-            'user_id' => $request->user_id,
-            'cover_image' => $path ?? null,
-        ]);
+        $post->title = $request->title;
+        $post->body = $request->body;
+        $post->save();
 
-        return response()->json($post, 200);
+        return redirect()->route('posts.index')->with('success', 'Post updated successfully.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Post $post)
     {
-        //
-        $post->delete();
-        return response()->json(null, 204);
+        if ($post->cover_image) {
+            Storage::disk('public')->delete($post->cover_image);
+        }
 
+        $post->delete();
+        return redirect()->route('posts.index')->with('success', 'Post deleted successfully.');
     }
 }

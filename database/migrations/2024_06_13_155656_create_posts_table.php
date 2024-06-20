@@ -16,10 +16,6 @@ return new class extends Migration
             $table->string('title');
             $table->string('body');
             $table->string('cover_image')->nullable();
-            $table->bigInteger('user_id')->unsigned();
-            $table->bigInteger('category_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();
         });
     }

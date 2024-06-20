@@ -38,6 +38,7 @@
                         @endif
                     </div>
                 </div>
+                <a class="btn btn-primary btn-sm" href="{{ route('users.edit',$user->id) }}"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
             </div>
         </div>
     </div>
