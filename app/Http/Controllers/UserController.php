@@ -138,7 +138,23 @@ class UserController extends Controller
                         ->with('success','User deleted successfully');
     }
 
-    public function login(){
-        
+    public function registerForm(){
+        return view('auth.register');
+    }
+
+    public function loginForm(){
+        return view('auth.login');
+    }
+    public function login(Request $request){
+        $credintials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required', 'password'],
+        ]);
+
+        if (Auth::attempt($credintials)){
+            $request->session()->regenerate();
+
+            return redirect()->intended('dashboards');
+        }
     }
 }

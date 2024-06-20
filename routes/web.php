@@ -14,6 +14,11 @@ Route::get('/apps',function(){
     return view('layouts.app');
 });
 
+
+// Authentication
+Route::get('/register',[UserController::class, 'register'])->name('register');
+Route::get('/login',[UserController::class, 'login'])->name('login');
+
 Route::get('/dashboards', function () {
     return view('dashboard.index');
 });
