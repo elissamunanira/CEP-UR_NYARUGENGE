@@ -90,7 +90,7 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->body = $request->body;
          // Sync categories with the post
-         $post->categories()->sync($request->categories);
+         $post->Category()->sync($request->categories);
 
         $post->save();
 
