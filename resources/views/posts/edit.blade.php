@@ -30,7 +30,7 @@
                         <select name="categories[]" id="categories" class="form-control" multiple>
                             @foreach($categories as $category)
                                 <option value="{{ $category->id }}"
-                                    {{ $post->categories->contains($category->id) ? 'selected' : '' }}>
+                                    {{ $post->Category>contains($category->id) ? 'selected' : '' }}>
                                     {{ $category->name }}
                                 </option>
                             @endforeach
