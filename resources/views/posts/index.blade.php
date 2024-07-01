@@ -21,19 +21,19 @@
                             <td>{{ ++$i }}</td>
                             <td>{{ $post->title }}</td>
                             <td>
-                                <a class="btn btn-info btn-sm" href="{{ route('posts.show',$post->id) }}"><i class="fa-solid fa-list"></i> Show</a>
-                                @can('post-edit')
+                                <a class="btn btn-info btn-sm" href="{{ route('post.show',$post->id) }}"><i class="fa-solid fa-list"></i> Show</a>
+                                {{-- @can('post-edit') --}}
                                     <a class="btn btn-primary btn-sm" href="{{ route('posts.edit',$post->id) }}"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
-                                @endcan
+                                {{-- @endcan --}}
                     
-                                @can('post-delete')
+                                {{-- @can('post-delete') --}}
                                 <form method="POST" action="{{ route('posts.destroy', $post->id) }}" style="display:inline">
                                     @csrf
                                     @method('DELETE')
                     
                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i> Delete</button>
                                 </form>
-                                @endcan
+                                {{-- @endcan --}}
                             </td>
                         </tr>
                         @endforeach

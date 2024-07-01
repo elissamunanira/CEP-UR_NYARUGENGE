@@ -4,11 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\RoleController;
+use App\Http\Controllers\PagesController;
 
-Route::get('/', function () {
-    return view('home.index');
-});
+Route::get('/', [PagesController::class, 'index']);
 
 Route::get('/apps',function(){
     return view('layouts.app');
@@ -31,9 +29,10 @@ Route::get('/dashboards', function () {
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 Route::get('/dashboard/posts/create', [PostController::class, 'create'])->name('post.create');
 Route::post('/posts', [PostController::class, 'store'])->name('post.store');
-Route::get('/dashboard/posts/{post}/edit', [PostController::class, 'edit'])->name('post.edit');
+Route::get('/dashboard/posts/{post}', [PostController::class, 'show'])->name('post.show');
+Route::get('/dashboard/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
 Route::put('/dashboard/posts/{post}/update', [PostController::class, 'update'])->name('post.update');
-Route::delete('/dashboard/posts/{post}/delete', [PostController::class, 'delete'])->name('post.delete');
+Route::delete('/dashboard/posts/{post}/delete', [PostController::class, 'delete'])->name('posts.destroy');
 
 //categories routes
 Route::get('/dashboard/categories', [CategoryController::class, 'index'])->name('categories.index');

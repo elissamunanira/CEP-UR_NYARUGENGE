@@ -243,21 +243,25 @@
         <div class="row no-gutters">
             <div class="col-md-12 col-xs-12 col-lg-8">
                 <div class="featured-slider mr-md-3 mr-lg-3">
-                    <div class="item" style="background-image:url(images/news/img-1.jpg)">
-                        <div class="post-content">
-                            <a href="#" class="post-cat bg-primary">Entertainment</a>
-                            <h2 class="slider-post-title">
-                                <a href="single-post.html">Here's How To Get Free Pizza On</a>
-                            </h2>
-                            <div class="post-meta mt-2">
-                                <span class="posted-time"><i class="fa fa-clock-o mr-2 text-danger"></i>19 hours ago</span>
-                                <span class="post-author">
-                                    by
-                                    <a href="author.html">Rodinho Summon</a>
-                                </span>
+                    @if($post)
+                        <div class="item" style="background-image:url('{{asset($post->cover_image) }}');">
+                            <div class="post-content">
+                                @foreach ( $post->Category as $category )
+                                <a href="#" class="post-cat bg-primary">{{ $category->name }}</a>
+                                @endforeach
+                                <h2 class="slider-post-title">
+                                    <a href="{{route('post.show', $post->id)}}">{{$post->title}}</a>
+                                </h2>
+                                <div class="post-meta mt-2">
+                                    <span class="posted-time"><i class="fa fa-clock-o mr-2 text-danger"></i>{{$post->created_at}}</span>
+                                    <span class="post-author">
+                                        by
+                                        <a href="author.html">Rodinho Summon</a>
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    @endif
                 </div>
             </div>
 

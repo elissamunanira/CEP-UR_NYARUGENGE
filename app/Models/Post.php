@@ -14,4 +14,12 @@ class Post extends Model
         'body',
         'cover_image',
     ];
+
+    public function User(){
+        return $this->belongsTo(User::class);
+    }
+    public function Category()
+{
+    return $this->belongsToMany(Category::class, 'post_has_category', 'post_id', 'category_id');
+}
 }
